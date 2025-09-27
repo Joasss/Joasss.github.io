@@ -1,22 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>QuaBot</title>
     <style>
         body {
-            font-family: 'Inter',sans-serif;
-            text-align: center;
+            font-family: 'Inter', sans-serif;
+            margin: 10px 200px;
+
+            @media (max-width: 1000px) {
+                margin: 10px 20px;
+            }
+        }
+
+        h1 {
+            margin: 0px;
+        }
+
+        h3 {
+            margin: 0px;
+            margin-top: 30px;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        b {
+            margin: 0px;
+            margin-top: 10px;
+            display: block;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        i {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 300px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .logo {
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                max-width: 40px;
+            }
+        }
+
+        .update {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            b {
+                font-weight: 600;
+                margin: 0px;
+                text-decoration: underline;
+            }
+            p {
+                margin: 0px;
+            }
+        }
+
+        .updates {
+            display: flex;
+            gap: 20px;
+            background-color: #f6f6f6;
+            padding: 20px;
+            border-radius: 10px;
+
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+                
+            }
+        }
+
+        button {
+            background-color: #416683;
+            color: white;
+            outline: 0;
+            border: 0;
+            border-radius: 55px;
+            padding: 10px 20px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <h1>Coming 2026.</h1>
-</body>
-</html>
 
+<body>
+    <div class="logo">
+        <img src="./logo512.png" />
+        <h1>Welcome to QuaBot.</h1>
+    </div>
+    <p>We are rebuilding the QuaBot Discord Bot — stable, powerful, and packed with new features. Coming in 2026.</p>
+
+    <h3>Latest Update</h3>
+
+    <div>
+        <div>
+            <b>September 2025</b>
+            <p>Over the last few weeks we have been hard at work to prepare the next version of QuaBot. We're super
+                excited to launch this next-generation, we believe it is a massive improvement. View some sneak-peaks in
+                the images below:</p>
+        </div>
+
+        <div class="updates">
+            <div class="update">
+                <b>Suggestions</b>
+                <p>The suggestions module is getting a major facelift, with buttons, improved layouts, and more
+                    customization options.</p>
+                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png"
+                    alt="QuaBot Suggestions" />
+            </div>
+
+            <div class="update">
+                <b>Overview</b>
+                <p>The overview/general settings page has been improved and each page should be easier to navigate with
+                    smooth animations and a more cohesive design.</p>
+                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png"
+                    alt="QuaBot Overview Page" />
+            </div>
+
+            <div class="update">
+                <b>Logs</b>
+                <p>We're working on this one, the logs module. You will be able to view and manage logs more
+                    effectively, on the dashboard, with a new interface and improved features.</p>
+                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/d8d8fb42-2de9-4158-ae82-34b37d90dc45.png"
+                    alt="QuaBot Logs" />
+            </div>
+        </div>
+
+        <br /><br />
+        <b>Are you as excited as we are?</b>
+        <p>Join our <a href="https://discord.gg/b2BVwWy7">Discord Server</a> to keep up to date with all the latest news.</p>
+
+        <button onclick="window.location.href='https://discord.gg/b2BVwWy7'">Join our Discord</button>
+        <br /><br />
+        <code style="font-size: 5px;">(c) QuaBot Development 2025</code>
+    </div>
+</body>
+
+</html>
