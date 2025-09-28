@@ -32,7 +32,6 @@
         h3 {
             margin: 0px;
             margin-top: 30px;
-            text-decoration: underline;
             font-size: 20px;
         }
 
@@ -40,7 +39,6 @@
             margin: 0px;
             margin-top: 10px;
             display: block;
-            font-style: italic;
             font-weight: 500;
         }
 
@@ -52,6 +50,7 @@
             max-width: 300px;
             border-radius: 10px;
             width: 100%;
+            cursor: pointer;
         }
 
         .logo {
@@ -75,7 +74,8 @@
             b {
                 font-weight: 600;
                 margin: 0px;
-                text-decoration: underline;
+                margin-bottom: 5px;
+                font-style: normal;
             }
 
             p {
@@ -110,16 +110,15 @@
 
 <body>
     <div class="logo">
-        <img src="./logo512.png" />
+        <img src="./logo512.png" onclick="openImageOverlayInCurrentPage('./logo512.png')" />
         <h1>Welcome to QuaBot.</h1>
     </div>
     <p>We are rebuilding the QuaBot Discord Bot — stable, powerful, and packed with new features. Coming in 2026.</p>
 
-    <h3>Latest Update</h3>
+    <h3>What are we working on?</h3>
 
     <div>
         <div>
-            <b>September 2025</b>
             <p>Over the last few weeks we have been hard at work to prepare the next version of QuaBot. We're super
                 excited to launch this next-generation, we believe it is a massive improvement. View some sneak-peaks in
                 the images below:</p>
@@ -132,7 +131,8 @@
                     <p>The suggestions module is getting a major facelift, with buttons, improved layouts, and more
                         customization options.</p>
                 </div>
-                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png"
+                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png')"
+                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png"
                     alt="QuaBot Suggestions" />
             </div>
 
@@ -143,7 +143,8 @@
                         with
                         smooth animations and a more cohesive design.</p>
                 </div>
-                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png"
+                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png')"
+                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png"
                     alt="QuaBot Overview Page" />
             </div>
 
@@ -155,13 +156,14 @@
                         customization options for moderation commands, in-depth logs and various lockdown and security
                         features including a security & statistics dashboard.</p>
                 </div>
-                <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png"
+                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png')"
+                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png"
                     alt="QuaBot Moderation" />
             </div>
         </div>
 
         <br /><br />
-        <b>Are you as excited as we are?</b>
+        <h3>Are you as excited as we are?</h3>
         <p>Join our <a href="https://discord.gg/b2BVwWy7">Discord Server</a> to keep up to date with all the latest
             news.</p>
 
@@ -170,5 +172,35 @@
         <code style="font-size: 5px;">(c) QuaBot Development 2025</code>
     </div>
 </body>
+
+<script>
+    function openImageOverlayInCurrentPage(url) {
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        overlay.style.display = 'flex';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        overlay.style.zIndex = '1000';
+
+        const img = document.createElement('img');
+        img.src = url;
+        img.style.maxWidth = '60%';
+        img.style.borderRadius = '10px';
+        img.style.cursor = 'pointer';
+
+        img.onclick = () => {
+            document.body.removeChild(overlay);
+        };
+
+        overlay.appendChild(img);
+        document.body.appendChild(overlay);
+    }
+
+</script>
 
 </html>
