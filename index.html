@@ -82,15 +82,15 @@
         }
 
         .updates {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             background-color: #f6f6f6;
             padding: 20px;
             border-radius: 10px;
 
             @media screen and (max-width: 600px) {
-                flex-direction: column;
-
+                grid-template-columns: 1fr;
             }
         }
 
