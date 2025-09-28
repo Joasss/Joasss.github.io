@@ -19,24 +19,26 @@
         body {
             font-family: 'Inter', sans-serif;
             margin: 10px 200px;
+        }
 
-            @media (max-width: 1000px) {
+        @media (max-width: 1000px) {
+            body {
                 margin: 10px 20px;
             }
         }
 
         h1 {
-            margin: 0px;
+            margin: 0;
         }
 
         h3 {
-            margin: 0px;
+            margin: 0;
             margin-top: 30px;
             font-size: 20px;
         }
 
         b {
-            margin: 0px;
+            margin: 0;
             margin-top: 10px;
             display: block;
             font-weight: 500;
@@ -51,17 +53,34 @@
             border-radius: 10px;
             width: 100%;
             cursor: pointer;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
 
         .logo {
-            padding-top: 20px;
+            padding: 10px 0px;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 5px;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            border-radius: 10px;
+        }
 
-            img {
-                max-width: 40px;
-            }
+        .logo img {
+            max-width: 40px;
+        }
+
+        .logo .tagline {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 8px;
+            opacity: 0.85;
         }
 
         .update {
@@ -70,29 +89,54 @@
             height: 100%;
             justify-content: space-between;
             gap: 10px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-            b {
-                font-weight: 600;
-                margin: 0px;
-                margin-bottom: 5px;
-                font-style: normal;
-            }
+        .update:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-            p {
-                margin: 0px;
-            }
+        .update b {
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 5px;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 1.1rem;
+        }
+
+        .update b .icon {
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+
+        .update p {
+            margin: 0;
+            line-height: 1.6;
         }
 
         .updates {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            background-color: #f6f6f6;
-            padding: 20px;
             border-radius: 10px;
+        }
 
-            @media screen and (max-width: 600px) {
+        @media screen and (max-width: 600px) {
+            .updates {
                 grid-template-columns: 1fr;
+            }
+
+            .logo {
+                flex-direction: column;
+                gap: 10px;
             }
         }
 
@@ -104,103 +148,134 @@
             border-radius: 55px;
             padding: 10px 20px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2f4f6f;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #416683;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 10px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
     </style>
 </head>
 
 <body>
-    <div class="logo">
-        <img src="./logo512.png" onclick="openImageOverlayInCurrentPage('./logo512.png')" />
-        <h1>Welcome to QuaBot.</h1>
-    </div>
-    <p>We are rebuilding the QuaBot Discord Bot — stable, powerful, and packed with new features. Coming in 2026.</p>
+    <header class="logo">
+        <img src="./logo512.png" alt="QuaBot Logo" onclick="openImageOverlayInCurrentPage('./logo512.png')">
+        <h1>Welcome back to QuaBot.</h1>
+        <div class="tagline">Working on the next-generation Discord bot</div>
+    </header>
 
-    <h3>What are we working on?</h3>
+    <main>
 
-    <div>
-        <div>
-            <p>Over the last few weeks we have been hard at work to prepare the next version of QuaBot. We're super
-                excited to launch this next-generation, we believe it is a massive improvement. View some sneak-peaks in
-                the images below:</p>
-        </div>
+        <section>
+            <p>We are rebuilding the QuaBot Discord Bot — stable, intuitive and powerful. Packed with new features.
+                Working hard to bring it to you in 2026. QuaBot was one of the most advanced multipurpose Discord bots,
+                and we're committed to making it even
+                better than the previous version, which had over 120,000 users. We're focused on enhancing its
+                capabilities and user experience, and we're excited to share our progress with you. We had to
+                discontinue support for the old version, but we're confident that the new one will be worth the wait.
+            </p>
+            <p>
+                Over the last few months we have been hard at work to prepare the next version of QuaBot. We're super
+                excited to launch this next-generation, we believe it is a massive improvement. View some sneak-peaks below:
+            </p>
 
-        <div class="updates">
-            <div class="update">
-                <div>
-                    <b>Suggestions</b>
-                    <p>The suggestions module is getting a major facelift, with buttons, improved layouts, and more
-                        customization options.</p>
-                </div>
-                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png')"
-                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png"
-                    alt="QuaBot Suggestions" />
+            <div class="updates">
+                <article class="update">
+                    <div>
+                        <b><span class="icon">💡</span> Suggestions</b>
+                        <p>The suggestions module is getting a major facelift, with buttons, improved layouts, and more
+                            customization options.</p>
+                    </div>
+                    <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png"
+                        alt="QuaBot Suggestions"
+                        onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/17b11715-eb40-40d5-be3d-3f137b3d8d9c.png')">
+                </article>
+
+                <article class="update">
+                    <div>
+                        <b><span class="icon">✨</span> Overview</b>
+                        <p>The overview/general settings page has been improved and each page should be easier to
+                            navigate with smooth animations and a more cohesive design.</p>
+                    </div>
+                    <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png"
+                        alt="QuaBot Overview Page"
+                        onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png')">
+                </article>
+
+                <article class="update">
+                    <div>
+                        <b><span class="icon">🔒</span> Moderation & Security</b>
+                        <p>
+                            Moderation & Security will be the new focus of QuaBot. We'll be offering raid protection,
+                            advanced customization options for moderation commands, in-depth logs and various lockdown
+                            and security features including a security & statistics dashboard.
+                        </p>
+                    </div>
+                    <img src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png"
+                        alt="QuaBot Moderation"
+                        onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png')">
+                </article>
             </div>
+        </section>
 
-            <div class="update">
-                <div>
-                    <b>Overview</b>
-                    <p>The overview/general settings page has been improved and each page should be easier to navigate
-                        with
-                        smooth animations and a more cohesive design.</p>
-                </div>
-                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png')"
-                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/efb53975-8eaa-4c63-9bae-64c8b099dfd8.png"
-                    alt="QuaBot Overview Page" />
-            </div>
+        <section>
+            <h3>Are you as excited as we are?</h3>
+            <p>We'll be sharing more information and sneak peaks in our Discord server, where you can try out the new bot for yourself!</p>
+            <button onclick="window.location.href='https://discord.gg/b2BVwWy7'">Join our Discord</button>
+        </section>
+    </main>
 
-            <div class="update">
-                <div>
-                    <b>Moderation & Security</b>
-                    <p>Moderation & Security will be the new focus of QuaBot. We'll be offering raid protection,
-                        advanced
-                        customization options for moderation commands, in-depth logs and various lockdown and security
-                        features including a security & statistics dashboard.</p>
-                </div>
-                <img onclick="openImageOverlayInCurrentPage('https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png')"
-                    src="https://zgnsqqbawlxsanrnsogz.supabase.co/storage/v1/object/public/assets/assets/4365a119-7ee2-4413-8ef2-29f9408063ee.png"
-                    alt="QuaBot Moderation" />
-            </div>
-        </div>
+    <footer>
+        &copy; QuaBot Development 2025
+    </footer>
 
-        <br /><br />
-        <h3>Are you as excited as we are?</h3>
-        <p>Join our <a href="https://discord.gg/b2BVwWy7">Discord Server</a> to keep up to date with all the latest
-            news.</p>
+    <script>
+        function openImageOverlayInCurrentPage(url) {
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+            overlay.style.zIndex = '1000';
 
-        <button onclick="window.location.href='https://discord.gg/b2BVwWy7'">Join our Discord</button>
-        <br /><br />
-        <code style="font-size: 5px;">(c) QuaBot Development 2025</code>
-    </div>
+            const img = document.createElement('img');
+            img.src = url;
+            img.style.maxWidth = '60%';
+            img.style.borderRadius = '10px';
+            img.style.cursor = 'pointer';
+
+            img.onclick = () => {
+                document.body.removeChild(overlay);
+            };
+
+            overlay.appendChild(img);
+            document.body.appendChild(overlay);
+        }
+    </script>
 </body>
-
-<script>
-    function openImageOverlayInCurrentPage(url) {
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        overlay.style.display = 'flex';
-        overlay.style.justifyContent = 'center';
-        overlay.style.alignItems = 'center';
-        overlay.style.zIndex = '1000';
-
-        const img = document.createElement('img');
-        img.src = url;
-        img.style.maxWidth = '60%';
-        img.style.borderRadius = '10px';
-        img.style.cursor = 'pointer';
-
-        img.onclick = () => {
-            document.body.removeChild(overlay);
-        };
-
-        overlay.appendChild(img);
-        document.body.appendChild(overlay);
-    }
-
-</script>
 
 </html>
